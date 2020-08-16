@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {PostPageComponent} from "./post-page/post-page.component";
@@ -23,7 +23,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules // loading all after required page load
+    })
   ],
   exports: [RouterModule]
 })
