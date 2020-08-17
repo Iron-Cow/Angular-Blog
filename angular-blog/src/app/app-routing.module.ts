@@ -4,7 +4,7 @@ import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.c
 import {HomePageComponent} from "./home-page/home-page.component";
 import {PostPageComponent} from "./post-page/post-page.component";
 import {CommonModule} from "@angular/common";
-import {AdminModule} from "./admin/admin.module";
+
 
 const routes: Routes = [
   {
