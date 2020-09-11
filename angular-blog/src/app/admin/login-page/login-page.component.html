@@ -1,5 +1,9 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
   <h2>Admin panel login</h2>
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+    {{error}}
+  </div>
+<!--  stream handle error-->
 
   <div
     class="form-control"
