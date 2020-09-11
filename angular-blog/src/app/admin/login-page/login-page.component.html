@@ -43,7 +43,8 @@
   <button
     type="submit"
     class="btn button-primary"
+    [disabled]="form.invalid || submitted"
+
   >Enter</button>
-  <!--    [disabled]="form.invalid"-->
 
 </form>
