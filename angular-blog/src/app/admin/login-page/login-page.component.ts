@@ -9,6 +9,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
+// @ts-ignore
 export class LoginPageComponent implements OnInit {
   form: FormGroup;
   submitted = false;
