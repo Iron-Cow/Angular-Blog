@@ -58,7 +58,7 @@ export class AuthService {
   }
   // @ts-ignore
   private setToken(response: FbAuthResponse | null): void {
-    console.log(response);
+    // console.log(response);
     if (response){
     const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);  // convert to ms
     localStorage.setItem('fb-token', response.idToken);
