@@ -2,8 +2,8 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
-import {Post} from "./interfaces";
-import {FbCreateResponse} from "../../environments/interface";
+import {FbAuthResponse, Post} from "./interfaces";
+
 import {map} from "rxjs/operators";
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +14,7 @@ export class PostsService {
   ){}
   create(post: Post): Observable<Post> {
     return this.http.post(`${environment.fbDbUrl}/posts.json`, post)
-      .pipe(map((response: FbCreateResponse) => {
+      .pipe(map((response: FbAuthResponse) => {
         // @ts-ignore
         return  {
           ...post,
