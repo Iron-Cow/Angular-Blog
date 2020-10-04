@@ -41,5 +41,6 @@ import {AuthGuard} from "./shared/services/auth.guard";
     EditPageComponent
   ],
 })
+
 export class AdminModule {
 }
