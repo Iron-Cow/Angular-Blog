@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../shared/services/auth.service";
 import {PostsService} from "../../shared/posts.service";
 import {Subscription} from "rxjs";
+import { Post } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -29,7 +30,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   }
 
-  remove(id: string) {
+  remove(id: string): void {
 
   }
 }
