@@ -11,7 +11,9 @@ export class AuthInterceptor implements HttpInterceptor{
   constructor(
     private auth: AuthService,
     private router: Router
+
   ) {}
+
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this.auth.is_authenticated()){
@@ -20,6 +22,7 @@ export class AuthInterceptor implements HttpInterceptor{
           auth: this.auth.token
         }
       });
+
     }
     return next.handle(req)
       .pipe(
@@ -40,4 +43,5 @@ export class AuthInterceptor implements HttpInterceptor{
           })
       );
   }
+
 }

@@ -17,6 +17,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
   useClass: AuthInterceptor
 };
 
+
 @NgModule({
   declarations: [
     AppComponent,
