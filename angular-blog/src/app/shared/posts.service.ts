@@ -27,6 +27,7 @@ export class PostsService {
 
       }));
   }
+
   getAll(): Observable<Post[]>{
     return this.http.get(`${environment.fbDbUrl}/posts.json`)
       .pipe(map((response: {[key: string]: any}) => {
@@ -55,5 +56,9 @@ export class PostsService {
       };
 
       }));
+  }
+
+  update(post: Post): Observable<Post>{
+    return this.http.patch<Post>(`${environment.fbDbUrl}/posts/${post.id}.json`, post)
   }
 }
