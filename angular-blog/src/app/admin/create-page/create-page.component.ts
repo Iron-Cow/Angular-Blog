@@ -23,6 +23,7 @@ export class CreatePageComponent implements OnInit {
       text: new FormControl('', Validators.required),
       author: new FormControl('', Validators.required),
     });
+    console.log('start');
   }
 
   submit(): void{
@@ -30,7 +31,6 @@ export class CreatePageComponent implements OnInit {
       console.log(this.form);
       return;
     }
-
     const post: Post = {
       title: this.form.value.title,
       author: this.form.value.author,
