@@ -9,6 +9,10 @@ import { PostPageComponent } from './post-page/post-page.component';
 import { PostComponent } from './shared/components/post/post.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./shared/auth.interceptor";
+import {registerLocaleData} from "@angular/common";
+import ruLocale from "@angular/common/locales/ru";
+
+registerLocaleData(ruLocale, 'ru')
 
 // interceptor registration
 const INTERCEPTOR_PROVIDER: Provider = {
