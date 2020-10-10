@@ -11,8 +11,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import {registerLocaleData} from "@angular/common";
 import ruLocale from "@angular/common/locales/ru";
+import {QUILL_CONFIG_TOKEN, QuillModule} from "ngx-quill";
 
-registerLocaleData(ruLocale, 'ru')
+registerLocaleData(ruLocale, 'ru');
 
 // interceptor registration
 const INTERCEPTOR_PROVIDER: Provider = {
@@ -20,6 +21,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
   multi: true,
   useClass: AuthInterceptor
 };
+
 
 
 @NgModule({
@@ -33,7 +35,9 @@ const INTERCEPTOR_PROVIDER: Provider = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    // @ts-ignore
+    QuillModule.forRoot(QUILL_CONFIG_TOKEN.ngInjectableDef)  // internet solution
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
